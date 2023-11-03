@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () { return view('welcome');});
 Route::get('/',[QuestionController::class, 'index'])->name('question.index');
 Route::get('/question/create',[QuestionController::class, 'create'])->name('question.create');
+Route::post('/question/create',[QuestionController::class, 'store'])->name('question.store');
 Route::post('/',[QuestionController::class, 'vote'])->name('question.vote');
 Route::get('/dashboard', function () { return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
 

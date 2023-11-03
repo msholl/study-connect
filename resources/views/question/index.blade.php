@@ -5,7 +5,8 @@
         @foreach($questions as $question)
             <div class="w-full m-auto ml-auto p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 mt-10">
                 <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">{{$question->title}}</h5>
-                <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{{$question->body}}</p>
+                <span class="text-gray-500">{{ucfirst($question->category)}}</span>
+                <p class="my-4  text-base text-gray-500 sm:text-lg dark:text-gray-400">{{$question->body}}</p>
                 <div class="items-start justify-between space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
                     <div class="flex">
                             <a href="#" class="text-sky-700 flex px-2">

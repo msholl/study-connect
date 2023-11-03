@@ -31,7 +31,16 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd(auth()->user()->id);
+        $question = \App\Models\Question::create([
+            'user_id' => auth()->user()->id,
+            'title' => $request->title,
+            'body' => $request->body,
+            'category' => $request->category,
+            'votes_count' => 0
+        ]);
+
+        return redirect()->route('question.index');
     }
 
     /**
