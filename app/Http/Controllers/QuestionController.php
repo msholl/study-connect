@@ -48,7 +48,14 @@ class QuestionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $answers = \App\Models\Answer::where('question_id', $id)->get();
+        foreach ($answers as $answer) {
+            $answer->user = \App\Models\User::find($answer->user_id);
+        }
+        return view('question.show', [
+            'question' => \App\Models\Question::find($id),
+            'answers' => $answers,
+        ]);
     }
 
     /**
