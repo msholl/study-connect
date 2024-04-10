@@ -83,11 +83,11 @@ php artisan serve
 ### Comandos úteis Laravel
 
 ```php
-php artisan migrate:fresh --seed //Roda as migrations e seeders
+php artisan migrate //Roda as migrations no banco de dados
 
 php artisan serve //Roda o servidor local
 
-php artisan make:model NomeModelo -m //Cria um model e migration
+php artisan make:model NomeModelo -mf //Cria um model, migration e factory
 
 php artisan make:controller NomeController -r //Cria um controller com recursos
 ```
