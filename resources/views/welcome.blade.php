@@ -1,34 +1,34 @@
-<x-layouts.app>
+<x-app-layout>
     <div>
         {{--    Categorias  --}}
-        <div>
-            <ul class="w-7/12 m-auto flex justify-between">
-                <li>
+        <div class="w-full">
+            <ul class=" lg:w-7/12 m-auto flex sm:gap-x-2 lg:justify-between overflow-scroll no-scrollbar">
+                <li class="mr-2">
                     <a href="/perguntas?categoria=programacao" class="block w-4/4 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h5 class=" text-l font-bold tracking-tight text-gray-900 dark:text-white">PROGRAMAÇÃO</h5>
                     </a>
                 </li>
-                <li>
+                <li class="mr-2">
                     <a href="perguntas?categoria=algoritmo" class="block w-4/4 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h5 class=" text-l font-bold tracking-tight text-gray-900 dark:text-white">ALGORITMOS</h5>
                     </a>
-                </li>
-                <li>
+                </li class="mr-2">
+                <li class="mr-2">
                     <a href="/perguntas?categoria=matematica" class="block w-4/4 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h5 class=" text-l font-bold tracking-tight text-gray-900 dark:text-white">MATEMÁTICA</h5>
                     </a>
-                </li>
-                <li>
+                </li class="mr-2">
+                <li class="mr-2">
                     <a href="perguntas?categoria=dados" class="block w-4/4 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h5 class=" text-l font-bold tracking-tight text-gray-900 dark:text-white">DADOS</h5>
                     </a>
-                </li>
-                <li>
+                </li class="mr-2">
+                <li class="mr-2">
                     <a href="perguntas?categoria=rede" class="block w-4/4 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h5 class=" text-l font-bold tracking-tight text-gray-900 dark:text-white">REDES</h5>
                     </a>
-                </li>
-                <li>
+                </li class="mr-2">
+                <li class="mr-2">
                     <a href="perguntas?categoria=ia" class="block w-4/4 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h5 class=" text-l font-bold tracking-tight text-gray-900 dark:text-white">IA</h5>
                     </a>
@@ -190,15 +190,6 @@
                 </div>
             </div>
         </section>
-
-        {{--    <ul>--}}
-        {{--        @foreach($questions as $question)--}}
-        {{--            <li>--}}
-        {{--                {{ $question->title }}--}}
-        {{--            </li>--}}
-
-        {{--        @endforeach--}}
-        {{--    </ul>--}}
     </div>
 
-</x-layouts.app>
+</x-app-layout>

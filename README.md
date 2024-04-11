@@ -89,7 +89,7 @@ php artisan serve //Roda o servidor local
 
 php artisan make:model NomeModelo -mf //Cria um model, migration e factory
 
-php artisan make:controller NomeController -r //Cria um controller com recursos
+php artisan make:controller NomeController -r //Cria um controller com recurso
 ```
 
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
-Route::view('layout', 'layout')->name('layout');
+//Route::view('layout', 'layout')->name('layout');
 Route::get('/nova-pergunta', \App\Livewire\Question\Create::class)->name('question.create');
 Route::get('/perguntas', \App\Livewire\Question\Index::class)->name('question.index');
 
