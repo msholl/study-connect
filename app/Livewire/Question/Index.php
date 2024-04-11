@@ -13,11 +13,14 @@ class Index extends Component
     public function render()
     {
         if ($this->categoria != '') {
-            return view('livewire.question.index')->with('questions', \App\Models\Question::where('status', 'published')
+            $questions = \App\Models\Question::where('status', 'published')
                 ->where('category', $this->categoria)
                 ->orderBy('created_at', 'desc')
                 ->orderBy('votes', 'desc')
-                ->get());
+                ->get();
+            return view('livewire.question.index')->with([
+                'questions' => $questions,
+                'categoria' => $this->categoria]);
         } else {
             return view('livewire.question.index')->with('questions', \App\Models\Question::where('status', 'published')
                 ->orderBy('created_at', 'desc')

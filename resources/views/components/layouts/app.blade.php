@@ -128,78 +128,90 @@
                             <path clip-rule="evenodd" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"></path>
                         </svg>
                     </button>
-                    <button
-                        type="button"
-                        class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                        id="user-menu-button"
-                        aria-expanded="false"
-                        data-dropdown-toggle="dropdown"
-                    >
-                        <span class="sr-only">Abrir menu</span>
-                        <x-heroicon-c-user-circle class=" text-gray-500 bg-white w-8 h-8 rounded-full"/>
-                    </button>
-                    <!-- Dropdown menu -->
-                    <div
-                        class="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
-                        id="dropdown"
-                    >
-                        <div class="py-3 px-4">
-              <span
-                  class="block text-sm font-semibold text-gray-900 dark:text-white"
-              >Neil Sims</span
-              >
-                            <span
-                                class="block text-sm text-gray-900 truncate dark:text-white"
-                            >name@flowbite.com</span
+                    @if(Auth::check())
+
+                        <button
+                            type="button"
+                            class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            id="user-menu-button"
+                            aria-expanded="false"
+                            data-dropdown-toggle="dropdown"
+                        >
+                            <span class="sr-only">Abrir menu</span>
+                            <x-heroicon-c-user-circle class=" text-gray-500 bg-white w-8 h-8 rounded-full"/>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div class="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl" id="dropdown">
+                            <div class="py-3 px-4">
+                              <span class="block text-sm font-semibold text-gray-900 dark:text-white">
+                                  {{ucfirst(Auth::user()->name)}}
+                              </span>
+                              <span class="block text-sm text-gray-900 truncate dark:text-white">
+                                {{Auth::user()->email}}
+                              </span>
+                            </div>
+                            <ul
+                                class="py-1 text-gray-700 dark:text-gray-300"
+                                aria-labelledby="dropdown"
                             >
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                                    >Minha conta</a
+                                    >
+                                </li>
+                            </ul>
+                            <ul
+                                class="py-1 text-gray-700 dark:text-gray-300"
+                                aria-labelledby="dropdown"
+                            >
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    ><svg
+                                            class="mr-2 w-5 h-5 text-gray-400"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"
+                                            ></path>
+                                        </svg>
+                                        Minhas perguntas</a>
+                                </li>
+
+                            </ul>
+                            <ul
+                                class="py-1 text-gray-700 dark:text-gray-300"
+                                aria-labelledby="dropdown"
+                            >
+                                <li>
+                                    <form action="{{route('logout')}}" method="post">
+                                        @csrf
+                                        <button
+                                            type="submit"
+                                            class="w-full my-2 text-left block py-2 px-4 text-sm text-red-900 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            Sair
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
                         </div>
-                        <ul
-                            class="py-1 text-gray-700 dark:text-gray-300"
-                            aria-labelledby="dropdown"
-                        >
-                            <li>
-                                <a
-                                    href="#"
-                                    class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                                >Minha conta</a
-                                >
-                            </li>
-                        </ul>
-                        <ul
-                            class="py-1 text-gray-700 dark:text-gray-300"
-                            aria-labelledby="dropdown"
-                        >
 
-                            <li>
-                                <a
-                                    href="#"
-                                    class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                ><svg
-                                        class="mr-2 w-5 h-5 text-gray-400"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"
-                                        ></path>
-                                    </svg>
-                                    Minhas perguntas</a>
-                            </li>
+                    @else
 
-                        </ul>
-                        <ul
-                            class="py-1 text-gray-700 dark:text-gray-300"
-                            aria-labelledby="dropdown"
-                        >
-                            <li>
                                 <a
-                                    href="#"
-                                    class="block py-2 px-4 text-sm text-red-900 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                >Sair</a
+                                    href="{{route('login')}}"
+                                    class="hidden lg:flex items-center p-2 text-base font-medium hover:text-gray-200 rounded-lg transition duration-75 bg-blue-700 text-gray-50 dark:hover:bg-gray-700 dark:text-white group"
                                 >
-                            </li>
-                        </ul>
-                    </div>
+                                    <span class="ml-3">Entrar</span>
+                                    <x-tabler-arrow-narrow-right class="w-6 h-6 text-gray-50 hover:text-gray-200"/>
+                                </a>
+                    @endif
+
                 </div>
             </div>
         </nav>
@@ -270,7 +282,7 @@
                             href="{{route('question.index')}}"
                             class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                         >
-
+                            <x-heroicon-o-globe-alt class="w-6 h-6 text-gray-500 group-hover:text-gray-900"/>
                             <span class="ml-9">Ver Todas</span>
                         </a>
                     </li>
@@ -280,7 +292,7 @@
                             class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                         >
                             <x-heroicon-s-code-bracket class="w-6 h-6 text-gray-500 group-hover:text-gray-900" />
-                            <span class="ml-3">Programcação</span>
+                            <span class="ml-3">Programação</span>
                         </a>
                     </li>
                     <li>
