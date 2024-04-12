@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased flex flex-col h-screen justify-between">
+    <body class="font-sans antialiased bg-gray-50 flex flex-col h-screen justify-between">
 
 
     <div class="antialiased bg-gray-50 dark:bg-gray-900">
@@ -207,7 +207,7 @@
                                     href="{{route('login')}}"
                                     class="hidden lg:flex items-center p-2 text-base font-medium hover:text-gray-200 rounded-lg transition duration-75 bg-blue-700 text-gray-50 dark:hover:bg-gray-700 dark:text-white group"
                                 >
-                                    <span class="ml-3">Entrar</span>
+                                    <span class="ml-3">Entrar / Cadastre-se</span>
                                     <x-tabler-arrow-narrow-right class="w-6 h-6 text-gray-50 hover:text-gray-200"/>
                                 </a>
                     @endif
@@ -275,15 +275,26 @@
                             <span class="ml-3">Ver Perguntas</span>
                         </a>
                     </li>
+                    @if(!Auth::user())
+                        <li class="bg-gray-100 rounded-lg">
+                            <a
+                                href="{{route('login')}}"
+                                class="flex items-center pt-2 pb-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+                            >
+                                <span class="ml-3">Entrar / Cadastre-se</span>
+                            </a>
+                        </li>
+                    @endif
+
                 </ul>
-                <ul class="space-y-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                <ul class="space-y-2 pt-2 mt-1 border-t border-gray-200 dark:border-gray-700">
                     <li>
                         <a
                             href="{{route('question.index')}}"
                             class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                         >
                             <x-heroicon-o-globe-alt class="w-6 h-6 text-gray-500 group-hover:text-gray-900"/>
-                            <span class="ml-9">Ver Todas</span>
+                            <span class="ml-3">Todas perguntas</span>
                         </a>
                     </li>
                     <li>

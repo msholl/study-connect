@@ -23,11 +23,11 @@ $login = function () {
 
 ?>
 
-<div class="w-10/12 lg:w-3/12 m-auto">
+<div class="h-full flex flex-col items-center lg:mt-20">
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form wire:submit="login">
+    <form class="w-full lg:w-4/12" wire:submit="login">
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -67,4 +67,11 @@ $login = function () {
             </x-primary-button>
         </div>
     </form>
+    <h4 class="mt-14">Ainda não é cadastrado?</h4>
+    <a href="{{route('register')}}"
+        class="flex items-center mt-4 p-2 text-base font-medium hover:text-gray-200 rounded-lg transition duration-75 bg-blue-700 text-gray-50 dark:hover:bg-gray-700 dark:text-white group"
+    >
+        <span class="ml-1">Cadastre-se</span>
+        <x-tabler-arrow-narrow-right class="w-6 h-6 text-gray-50 hover:text-gray-200"/>
+    </a>
 </div>

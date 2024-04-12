@@ -40,8 +40,8 @@ $register = function () {
 
 ?>
 
-<div class="w-10/12 lg:w-3/12 m-auto">
-    <form wire:submit="register">
+<div class="h-full flex flex-col items-center lg:mt-20">
+    <form class="w-full lg:w-4/12" wire:submit="register">
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Nome')" />

@@ -6,8 +6,12 @@ foreach ($questions as $question){
 
 @endphp
 <div>
-    <h2 class=" w-10/12 m-auto pb-4 lg:py-6 text-gray-900 text-2xl lg:text-3xl">@if($categoria != null) {{ucfirst($categoria)}} @endif</h2>
+    <h2 class=" w-10/12 m-auto pb-4 lg:py-6 text-gray-900 text-2xl lg:text-3xl">@if($categoria != null) {{ucfirst($categoria)}} @else {{"Perguntas"}} @endif</h2>
+    @if($questions->isEmpty())
+        <h5 class="w-full text-center mt-24 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Nenhuma pergunta encontrada</h5>
+    @endif
     <div class="w-11/12 lg:w-10/12 m-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
+
         @foreach($questions as $question)
                 <div class="w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="/respostas?pergunta={{$question->id}}">
