@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('body');
             $table->unsignedInteger('user_id');
             $table->string('category')->default('sem categoria');
-            $table->integer('votes')->default(0);
             $table->integer('answers')->default(0);
             $table->enum('status', ['published', 'draft', 'private'])->default('published');
             $table->timestamps();

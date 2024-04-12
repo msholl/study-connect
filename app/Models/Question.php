@@ -17,7 +17,7 @@ class Question extends Model
 //    protected $dateFormat = '';
 
 
-    protected $fillable = ['title', 'body', 'category', 'user_id', 'votes', 'answers', 'status'];
+    protected $fillable = ['title', 'body', 'category', 'user_id', 'answers', 'status'];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
