@@ -1,4 +1,4 @@
-
+{{--@dd($answers)--}}
 <div class="w-11/12 lg:w-6/12 m-auto text-center">
     <div>
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$question->title}}</h5>
@@ -27,12 +27,20 @@
                     @endif
 
                     <div class="flex flex-col text-gray-600 text-sm mt-2">
-                        <span class="text-right">
-                            - {{$answer->user->name}}
+
+                        @if($answer->ai_generated)
+                            <span class="text-right flex items-center text-gray-800">
+                            - Resposta gerada por IA <x-tabler-robot-face class="w-5 h-5 ml-1 text-blue-800" />
                         </span>
-                        <span class="text-right">
+                        @else
+                            <span class="text-right">
+                            - {{$answer->user->name}}
+                        @endif
+                        </span>
+                            <span class="text-right">
                             {{date('d/m/Y', strtotime($answer->created_at->toDateTimeString()))}}
                         </span>
+
                     </div>
                 </div>
             </div>

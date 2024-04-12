@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('body');
             $table->integer('votes')->default(0);
+            $table->boolean('ai_generated')->default(false);
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ class Answer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['question_id', 'user_id', 'body', 'votes'];
+    protected $fillable = ['question_id', 'user_id', 'body', 'votes', 'ai_generated'];
 
     public function question(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
