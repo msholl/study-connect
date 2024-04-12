@@ -84,6 +84,12 @@
                                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:text-gray-500 dark:text-white dark:hover:text-blue-700"
                             >Ver Perguntas</a>
                         </li>
+                        <li>
+                            <a
+                                href="{{route('question.create')}}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:text-gray-500 dark:text-white dark:hover:text-blue-700"
+                            >Fazer uma pergunta</a>
+                        </li>
                     </ul>
 
                     <!-- Search bar -->

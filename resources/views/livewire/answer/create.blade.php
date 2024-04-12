@@ -35,6 +35,15 @@
                         Responder
                     </button>
                 </form>
+                @if($question->user_id == Auth::id())
+                    <form wire:submit="openAi" class="grid grid-flow-row">
+                        <button type="submit" class=" w-4/12 flex justify-center items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-black bg-green-500 rounded-lg focus:ring-4 focus:ring-green-200 hover:bg-green-600">
+                            <x-tabler-brand-openai class="mr-2"/>
+                            Responder com IA
+                        </button>
+                    </form>
+                @endif
+
             </div>
         </section>
     @endif

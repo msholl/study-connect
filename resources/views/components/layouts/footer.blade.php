@@ -1,4 +1,4 @@
-<footer class="md:ml-64 p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+<footer class="md:ml-64 p-4 bg-gray-100 md:p-8 lg:p-10 dark:bg-gray-800">
     <div class="w-full mx-auto text-center">
         <a href="{{route('home')}}" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
             <img
