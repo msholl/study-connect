@@ -18,7 +18,8 @@ class Index extends Component
     {
 //        dd(Answer::with('user')->where('question_id', $this->id)->get());
             return view('livewire.answer.index',[
-                'question' => Question::find($this->id),
+                'question' => Question::with('user')->find($this->id),
+//                'question' => Question::find($this->id),
                 'answers' => Answer::with('user')->where('question_id', $this->id)->get()
             ]);
     }

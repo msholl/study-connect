@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Answer;
 
+use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -14,8 +15,10 @@ class Create extends Component
 
     public function render()
     {
+        $question = \App\Models\Question::find($this->id);
         return view('livewire.answer.create',[
-            'question' => \App\Models\Question::find($this->id)
+            'question' => $question,
+            'user' => User::find($question->user_id)
         ]);
     }
 
