@@ -1,7 +1,7 @@
-<div class="w-10/12 lg:w-6/12 m-auto text-center">
+<div class="w-10/12 lg:w-6/12 m-auto mt-14 text-center">
     <div>
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$question->title}}</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$question->body}}</p>
+        <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{{$question->title}}</h5>
+        <p class="mb-6 mt-3 font-bold text-xl text-gray-700 dark:text-gray-400">{{$question->body}}</p>
     </div>
 
     @if(!auth()->check())

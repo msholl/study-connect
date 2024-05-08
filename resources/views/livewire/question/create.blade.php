@@ -1,7 +1,7 @@
 <div>
 
     @if(!auth()->check())
-        <h2 class="text-center mb-4 text-xl font-bold text-gray-900 dark:text-white">Faça login para criar uma nova pergunta.</h2>
+        <h2 class="text-center mb-4 mt-14 text-xl font-bold text-gray-900 dark:text-white">Faça login para criar uma pergunta.</h2>
         <div class="w-4/12 mt-14 m-auto flex flex-col content-center flex-wrap text-center gap-y-2 py-2 bg-gray-100 border-0 rounded-2xl border-blue-800">
             <h3>Não é cadastrado?</h3>
             <a href="{{route('register')}}">
