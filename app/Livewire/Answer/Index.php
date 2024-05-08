@@ -16,10 +16,8 @@ class Index extends Component
 
     public function render()
     {
-//        dd(Answer::with('user')->where('question_id', $this->id)->get());
             return view('livewire.answer.index',[
                 'question' => Question::with('user')->find($this->id),
-//                'question' => Question::find($this->id),
                 'answers' => Answer::with('user')->where('question_id', $this->id)->get()
             ]);
     }

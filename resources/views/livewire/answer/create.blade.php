@@ -2,6 +2,10 @@
     <div>
         <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{{$question->title}}</h5>
         <p class="mb-6 mt-3 font-bold text-xl text-gray-700 dark:text-gray-400">{{$question->body}}</p>
+        <div class="flex flex-col text-end text-gray-600 text-sm mb-6">
+            <span>{{ucfirst($user->name)}}</span>
+            <span>{{date('d/m/Y', strtotime($question->created_at->toDateTimeString()))}}</span>
+        </div>
     </div>
 
     @if(!auth()->check())
