@@ -1,4 +1,3 @@
-{{--@dd($question)--}}
 <div class="w-11/12 lg:w-6/12 m-auto mt-14 text-center">
     <div>
         <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{{$question->title}}</h5>

@@ -27,7 +27,8 @@ class Create extends Component
         $question = \App\Models\Question::find($this->id)->body;
         try {
             $result = OpenAI::chat()->create([
-                'model' => 'gpt-3.5-turbo',
+//                'model' => 'gpt-3.5-turbo',
+                'model' => 'gpt-4-turbo',
                 'messages' => [
                         [
                             'role' => 'user',
